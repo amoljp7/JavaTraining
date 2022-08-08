@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>login</title>
+</head>
+<body>
+<from action="UserDashboard.html">
+<table>
+<tr>
+<td>Enter Username</td>
+<td><input type=text id="username" onkeyup="clearUserMsg()" name=us>
+</td>
+</tr>
+<tr>
+<td>Enter Password</td>
+<td><input type=text id="password" onkeyup="clearUserMsg()" name=password>
+</td>
+</tr>
+<tr>
+	<td colspan=2><input type=submit name=submit onclick="return validate()"></td>
+</tr>
+<tr>
+	<td colspan=2>Not a member yet ?<a href="Register.html">Register</td>
+	
+</tr>
+<tr>
+	<td colspan=2>forgot password?<a href="ForgotPassword.html">Forgot Password</td>
+	
+</tr>
+<tr>
+	<td colspan=2>reset password?<a href="ResetPassword.html">Reset Password</td>
+	
+</tr>
+	
+</body>
+</html>
