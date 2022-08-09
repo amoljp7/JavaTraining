@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<style>
+	#mailErr,#passErr,#passErr{
+	
+	color: red;
+	}
+</style>
+<script>
+
+function validateUser()
+{
+	var mail = document.getElementById("umail").value;
+
+	if(mail=="")
+		{
+		document.getElementById("mailErr").innerHTML="mail cannot be blank";
+			return false;
+		}
+	var password = document.getElementById("pass").value;
+	if(password=="")
+		{
+		document.getElementById("passErr").innerHTML="password cannot be blank";
+			return false;
+		}
+		
+	var repass =document.getElementById("repass").value;
+	if(password!==repass)
+		{
+		document.getElementById("repassErr").innerHTML="password not matching";
+		return false;
+		}
+	return true;
+}
+function clearUserErr(){document.getElementById("mailErr").innerHTML="";}
+function clearPassErr(){document.getElementById("passErr").innerHTML="";}
+function clearrepassErr(){document.getElementById("repassErr").innerHTML="";}
+
+</script>
+<body>
+<form action="ShowFlight.html">
+Enter usermail<input type=email id="umail" onKeyUp="clearUserErr()">
+<span id="mailErr"></span><br>
+Enter password<input type=password pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/" id="pass" onKeyUp="clearPassErr()">
+<span id="passErr"></span><br>
+ReEnter password<input type=password pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/" id="repass" onKeyUp="clearPassErr()">
+<span id="repassErr"></span>
+<br>
+<input type=submit name=submit value="Login" onClick='return validateUser()'>
+</form>
+<P>Your passowrd must be 8 character long with alphanumeric char</P>
+</body>
+</html>
